@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .division{
+            margin-bottom: 1%;
+        }
+        h1{
+            text-align: center;
+            color: rgb(137, 37, 37);
+        }
+        body{
+            background: url("/static/bank1.png") no-repeat center fixed;
+            background-size: cover;
+            text-align: center;
+        }
+        /* form{
+            text-align: center;
+        } */
+        .instruction{
+            text-align: center;
+            color: rgb(89, 118, 211);
+            padding-bottom: 2.5%;
+            
+        }
+        .gender{
+            margin-right: 10%;
+            font-size: large;
+            font-weight: bold;
+            
+        }
+        .marry{
+            margin-right: 10%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .marryyes{
+            margin-right: 4%;
+            padding-left: 1.9%;
+        }
+        .depend{
+            margin-right: 8%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .dependval{
+            margin-right: 4%;
+            padding-left: 2.3%;
+        }
+        .loan_amt_term{
+            margin-right: 3%;
+            margin-left: 4%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .loan_amt_term_val{
+            
+        }
+        .loan_amt{
+            margin-right: 6.5%;
+            margin-left: 4%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .loan_amt_val{
+
+        }
+        .applicant_income{
+            margin-right: 4.1%;
+            margin-left: 4%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .applicant_income_val{
+
+        }
+        .coapplicant_income{
+            margin-right: 2.7%;
+            margin-left: 4%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .coapplicant_income_val{
+
+        }
+        .education{
+            margin-right: 8.7%;
+            margin-left: 0%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .education_val{
+            padding-left: 1%;
+        }
+        .self_emp{
+            margin-right: 6%;
+            margin-left: 0%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .self_emp_val{
+            margin-right: 4%;
+            padding-left: 1.9%;
+        }
+        .area{
+            margin-right: 6.3%;
+            margin-left: 5.3%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .area_val{
+            
+            margin-right: 5%;
+            padding-left: 2.8%;
+        }
+        .history{
+            margin-right: 6.3%;
+            margin-left: 1.4%;
+            font-size: large;
+            font-weight: bold;
+            padding-left: 4%;
+        }
+        .history_val{
+            margin-right: 5%;
+            padding-left: 2.8%;
+        }
+        .button{
+            
+            display: inline-block;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 16px;
+                    line-height: 20px;
+                    font-weight: 600;
+                    border-radius: 8px;
+                    padding: 14px 24px;
+                    border: none;
+                    transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+                    background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(186, 16, 72) 50%, rgb(215, 4, 102) 100%);
+                    color: #fff;
+                    margin-left: 3%;
+                    margin-top: 3%;
+                    
+        }
+        #pred_button{
+            background: rgb(8, 139, 5);
+        }
+    </style>
+    <title>Loan Prediction</title>
+    
+</head>
+<body>
+    <h1 id="head">LOAN ELIGIBILITY PREDICTION</h1>
+    <hr>
+    
+    <div class="instruction"><h2>Enter your details and press PREDICT Button</h2></div>
+    <form method="POST">
+        <div class="division"><label class="gender" for="Gender">Gender :</label>
+            <select name="Gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select><br></div>
+        
+        <div class="division"><label class="marry" for="Married">Married:</label>
+            <select class="marryyes" name="Married">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br></div>
+        
+        <div class="division"><label class="depend" for="Dependents">Dependents:</label>
+            <select class="dependval" name="Dependents">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3+">3+</option>
+            </select><br></div>
+
+        <!-- <div class="division"><label class="depend" for="Dependents">Dependents:</label>
+            <select class="dependval" name="Dependents">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3+">3+</option>
+            </select><br>
+    </div> -->
+        
+        <div class="division"><label class="education" for="Education">Education:</label>
+            <select class="education_val" name="Education">
+                <option value="Graduate">Graduate</option>
+                <option value="Not Graduate">Not Graduate</option>
+            </select><br></div>
+        
+        <div class="division"><label class="self_emp" for="Self_Employed">Self Employed:</label>
+            <select class="self_emp_val" name="Self_Employed">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select><br>
+    </div>
+        
+        <div class="division"><label class="applicant_income" for="ApplicantIncome">Applicant Income:</label>
+            <input class="applicant_income_val" type="number" name="ApplicantIncome"><br>
+    </div>
+        
+        <div class="division"><label class="coapplicant_income" for="CoapplicantIncome">Coapplicant Income:</label>
+            <input class="coapplicant_income_val" type="number" name="CoapplicantIncome"><br>
+    </div>
+    
+        <div class="division"><label class="loan_amt" for="LoanAmount">Loan Amount:</label>
+            <input class="loan_amt_val" type="number" name="LoanAmount"><br></div>
+        
+        <div class="division"><label class="loan_amt_term" for="Loan_Amount_Term">Loan Amount Term:</label>
+            <input class="loan_amt_term_val" type="number" name="Loan_Amount_Term"><br></div>
+        
+        
+        <div class="division"><label class="history" for="Credit_History">Credit History:</label>
+            <select class="history_val" name="Credit_History">
+                <option value="1.0">1.0</option>
+                <option value="0.0">0.0</option>
+            </select><br>
+    </div>
+        
+        <div class="division"> <label class="area" for="Property_Area">Property Area:</label>
+            <select class="area_val" name="Property_Area">
+                <option value="Urban">Urban</option>
+                <option value="Semiurban">Semiurban</option>
+                <option value="Rural">Rural</option>
+            </select><br></div>
+       
+
+
+        <input class="button" type="reset" value="Reset Form">
+        <input id="pred_button" class="button" type="submit" value="Predict Loan">
+        
+    </form>
+
+    {% if prediction %}
+        <h2>Your loan status: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
